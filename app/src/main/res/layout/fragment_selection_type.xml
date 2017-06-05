@@ -1,14 +1,22 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mhraju.bdboardexamresult.fragment.SelectionType">
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context="com.mhraju.bdboardexamresult.fragment.SelectionType"
+    android:orientation="vertical">
 
    <LinearLayout
        android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:gravity="center"
-       android:orientation="vertical">
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentStart="true"
+       android:layout_marginLeft="20dp"
+       android:layout_marginStart="20dp"
+       android:layout_marginTop="21dp"
+       android:id="@+id/linearLayout">
        <Button
            android:id="@+id/online"
            android:layout_marginLeft="15dp"
@@ -40,4 +48,19 @@
            android:background="@drawable/seletion_type_button"/>
    </LinearLayout>
 
-</LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="360dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="11dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_id_banner"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="11dp"
+        android:layout_marginEnd="11dp">
+
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

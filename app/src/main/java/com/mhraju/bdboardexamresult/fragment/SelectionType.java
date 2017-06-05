@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.mhraju.bdboardexamresult.R;
 
 
@@ -15,19 +17,11 @@ public class SelectionType extends Fragment implements View.OnClickListener {
     private Button mOnline;
     private Button mSms;
     private Button mRecheck;
+    private AdView mAdView;
 
-
-
-    private SelectionTypeListener mListener;
 
     public SelectionType() {
         // Required empty public constructor
-    }
-
-    public static SelectionType newInstance(String param1, String param2) {
-        SelectionType fragment = new SelectionType();
-
-        return fragment;
     }
 
     @Override
@@ -41,6 +35,13 @@ public class SelectionType extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_selection_type, container, false);
+
+        mAdView = (AdView)view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("ca-app-pub-6008099628983320~8651520695")
+                .build();
+        mAdView.loadAd(adRequest);
+        
         mOnline= (Button) view.findViewById(R.id.online);
         mSms= (Button) view.findViewById(R.id.sms);
         mRecheck= (Button) view.findViewById(R.id.recheck);
@@ -49,22 +50,7 @@ public class SelectionType extends Fragment implements View.OnClickListener {
         mRecheck.setOnClickListener(this);
         return view;
     }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
+    
     @Override
     public void onClick(View v) {
         switch (getId()){
@@ -78,8 +64,5 @@ public class SelectionType extends Fragment implements View.OnClickListener {
 
     }
 
-    public interface SelectionTypeListener {
 
-        void onFragmentInteraction(Uri uri);
-    }
 }

@@ -5,9 +5,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="ad_id_interstitial">ca-app-pub-6008099628983320/2335818693</string>
-    <string name="ad_id_banner">ca-app-pub-6008099628983320/9719484691</string>
+    <string name="ad_id_interstitial">ca-app-pub-6008099628983320/8511919894</string>
+    <string name="ad_id_banner">ca-app-pub-6008099628983320/2604987099</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!--ca-app-pub-6008099628983320~8651520695-->
 </resources>
