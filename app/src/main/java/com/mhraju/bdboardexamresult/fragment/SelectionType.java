@@ -17,6 +17,7 @@ public class SelectionType extends Fragment implements View.OnClickListener {
     private Button mRecheck;
 
 
+
     private SelectionTypeListener mListener;
 
     public SelectionType() {

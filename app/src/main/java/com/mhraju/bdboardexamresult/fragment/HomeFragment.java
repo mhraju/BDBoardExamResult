@@ -105,6 +105,7 @@ public class HomeFragment extends Fragment {
     public void  getSelection(){
 
 
+
         Bundle bundle = new Bundle();
         bundle.putInt("boardResult",trackId);
         bundle.putInt("admissionResult",trackId);
