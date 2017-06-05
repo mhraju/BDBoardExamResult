@@ -1,11 +1,12 @@
-package com.mhraju.bdboardexamresult;
+package com.mhraju.bdboardexamresult.activity;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,9 +18,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import com.mhraju.bdboardexamresult.R;
+import com.mhraju.bdboardexamresult.fragment.HomeFragment;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+
+    private Button boardResult, admissionResult, pscResult, nuExam, medicalResult, othersResult;
+    private int trackId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +35,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
 
 
@@ -47,12 +57,23 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
+        getSelection();
 
     }
 
 
+    public void  getSelection(){
+
+
+
+        Fragment fragment = new HomeFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.containerHome, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
 
     @Override
     public void onBackPressed() {

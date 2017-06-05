@@ -1,11 +1,9 @@
 package com.mhraju.bdboardexamresult.fragment;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Context;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -114,10 +112,10 @@ public class HomeFragment extends Fragment {
         bundle.putInt("nuExam",trackId);
         bundle.putInt("medicalResult",trackId);
         bundle.putInt("othersResult",trackId);
-        android.app.Fragment fragment = new SelectionFragment();
+        Fragment fragment=new SelectionType();
         fragment.setArguments(bundle);
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
+
         fragmentTransaction.replace(R.id.containerHome, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();

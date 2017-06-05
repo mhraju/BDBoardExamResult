@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mhraju.bdboardexamresult.fragment.SelectionType">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:gravity="center"
+       android:orientation="vertical">
+       <Button
+           android:id="@+id/online"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Results Via Online"
+           android:textSize="12sp"
+           android:textColor="#396654"
+           android:background="@drawable/seletion_type_button"/>
+       <Button
+           android:id="@+id/sms"
+           android:layout_margin="15dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="12sp"
+           android:text="Results via sms"
+           android:textColor="#396654"
+           android:background="@drawable/seletion_type_button"/>
+       <Button
+           android:id="@+id/recheck"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:layout_width="match_parent"
+           android:textSize="12sp"
+           android:layout_height="wrap_content"
+           android:text="Rescrutiny/ফলাফল পুনঃমূল্যায়ন "
+           android:textColor="#396654"
+           android:background="@drawable/seletion_type_button"/>
+   </LinearLayout>
+
+</LinearLayout>
