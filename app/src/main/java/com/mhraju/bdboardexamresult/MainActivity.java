@@ -1,5 +1,8 @@
 package com.mhraju.bdboardexamresult;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,9 +15,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+
+    private Button boardResult, admissionResult, pscResult, nuExam, medicalResult, othersResult;
+    private int trackId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +31,15 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        boardResult = (Button) findViewById(R.id.boardResult);
+        admissionResult = (Button) findViewById(R.id.admissionResult);
+        pscResult = (Button) findViewById(R.id.pscResult);
+        nuExam = (Button) findViewById(R.id.nuExam);
+        medicalResult = (Button) findViewById(R.id.medicalResult);
+        othersResult = (Button) findViewById(R.id.othersResult);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +58,92 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        boardResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                trackId = 10;
+                getSelection();
+            }
+        });
+
+        admissionResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                trackId = 11;
+                getSelection();
+
+            }
+        });
+
+        pscResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                trackId = 12;
+                getSelection();
+
+            }
+        });
+
+        nuExam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                trackId = 13;
+
+                getSelection();
+
+            }
+        });
+
+        medicalResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                trackId = 14;
+                getSelection();
+
+            }
+        });
+
+        othersResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                trackId = 15;
+                getSelection();
+
+            }
+        });
+
+
+
+
+    }
+
+
+    public void  getSelection(){
+
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("boardResult",trackId);
+        bundle.putInt("admissionResult",trackId);
+        bundle.putInt("pscResult",trackId);
+        bundle.putInt("nuExam",trackId);
+        bundle.putInt("medicalResult",trackId);
+        bundle.putInt("othersResult",trackId);
+        Fragment fragment = new SelectionFragment();
+        fragment.setArguments(bundle);
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.containerHome, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
     }
 
     @Override
