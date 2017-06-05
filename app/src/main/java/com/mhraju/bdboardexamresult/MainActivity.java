@@ -21,10 +21,6 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-
-    private Button boardResult, admissionResult, pscResult, nuExam, medicalResult, othersResult;
-    private int trackId;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +28,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        boardResult = (Button) findViewById(R.id.boardResult);
-        admissionResult = (Button) findViewById(R.id.admissionResult);
-        pscResult = (Button) findViewById(R.id.pscResult);
-        nuExam = (Button) findViewById(R.id.nuExam);
-        medicalResult = (Button) findViewById(R.id.medicalResult);
-        othersResult = (Button) findViewById(R.id.othersResult);
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -60,91 +49,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        boardResult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                trackId = 10;
-                getSelection();
-            }
-        });
-
-        admissionResult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                trackId = 11;
-                getSelection();
-
-            }
-        });
-
-        pscResult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                trackId = 12;
-                getSelection();
-
-            }
-        });
-
-        nuExam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                trackId = 13;
-
-                getSelection();
-
-            }
-        });
-
-        medicalResult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                trackId = 14;
-                getSelection();
-
-            }
-        });
-
-        othersResult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                trackId = 15;
-                getSelection();
-
-            }
-        });
-
-
-
 
     }
 
 
-    public void  getSelection(){
-
-
-        Bundle bundle = new Bundle();
-        bundle.putInt("boardResult",trackId);
-        bundle.putInt("admissionResult",trackId);
-        bundle.putInt("pscResult",trackId);
-        bundle.putInt("nuExam",trackId);
-        bundle.putInt("medicalResult",trackId);
-        bundle.putInt("othersResult",trackId);
-        Fragment fragment = new SelectionFragment();
-        fragment.setArguments(bundle);
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.containerHome, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-
-    }
 
     @Override
     public void onBackPressed() {
