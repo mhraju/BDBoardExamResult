@@ -126,7 +126,7 @@ public class SelectionType extends Fragment {
             public void onClick(View view) {
 
                 showIntAdd();
-                Fragment fragment=new OnlineResultFragment();
+                Fragment fragment=new RescrutinyFragment();
                 FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.containerHome, fragment);
                 fragmentTransaction.addToBackStack(null);
