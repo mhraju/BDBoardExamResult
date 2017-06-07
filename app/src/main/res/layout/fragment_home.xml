@@ -119,7 +119,6 @@
 
             <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_bl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -129,18 +128,20 @@
                 card_view:cardCornerRadius="1dp">
 
                 <Button
-                    android:id="@+id/nuExam"
+                    android:id="@+id/bcsResult"
                     android:layout_width="105dp"
                     android:layout_height="105dp"
                     android:layout_margin="12dp"
-                    android:background="@drawable/nuexam"
+                    android:background="@drawable/medicalresult"
                     android:paddingTop="16dp"
-                    android:text="NU \n Exam"
+                    android:text="BCS \n Result"
                     android:textColor="#fff"
                     android:textSize="12sp" />
 
 
             </android.support.v7.widget.CardView>
+
+
 
         </LinearLayout>
 
@@ -181,6 +182,69 @@
 
             <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                card_view:cardCornerRadius="1dp">
+
+                <Button
+                    android:id="@+id/polytechResult"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/othersresult"
+                    android:paddingTop="16dp"
+                    android:text="Polytech \n Exam"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+
+            </android.support.v7.widget.CardView>
+
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_2"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_bl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                card_view:cardCornerRadius="1dp">
+
+                <Button
+                    android:id="@+id/nuExam"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/nuexam"
+                    android:paddingTop="16dp"
+                    android:text="NU \n Exam"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/card_view_tk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -197,13 +261,16 @@
                     android:layout_margin="12dp"
                     android:background="@drawable/othersresult"
                     android:paddingTop="16dp"
-                    android:text="Others \n Exam"
+                    android:text="BOU \n Exam"
                     android:textColor="#fff"
                     android:textSize="12sp" />
 
             </android.support.v7.widget.CardView>
 
+
         </LinearLayout>
+
+
 
 
         <LinearLayout
@@ -216,7 +283,7 @@
 
             <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_medicalResult"
+                android:id="@+id/card_view_teachersResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -226,13 +293,13 @@
                 card_view:cardCornerRadius="1dp">
 
                 <Button
-                    android:id="@+id/medicalResult1"
+                    android:id="@+id/teachersResult"
                     android:layout_width="105dp"
                     android:layout_height="105dp"
                     android:layout_margin="12dp"
                     android:background="@drawable/medicalresult"
                     android:paddingTop="16dp"
-                    android:text="Medical \n BDMC"
+                    android:text="Teachers"
                     android:textColor="#fff"
                     android:textSize="12sp" />
 
@@ -242,7 +309,7 @@
 
             <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_othersResult"
+                android:id="@+id/card_view_bankResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -252,13 +319,13 @@
                 card_view:cardCornerRadius="1dp">
 
                 <Button
-                    android:id="@+id/othersResult1"
+                    android:id="@+id/bankResult"
                     android:layout_width="105dp"
                     android:layout_height="105dp"
                     android:layout_margin="12dp"
                     android:background="@drawable/othersresult"
                     android:paddingTop="16dp"
-                    android:text="Others \n Exam"
+                    android:text="Bank \n Exam"
                     android:textColor="#fff"
                     android:textSize="12sp" />
 

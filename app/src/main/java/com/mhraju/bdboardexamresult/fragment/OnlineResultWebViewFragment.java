@@ -2,7 +2,6 @@ package com.mhraju.bdboardexamresult.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,19 +12,10 @@ import android.widget.Button;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.kazy.lx.LxWebContainerView;
-import com.kazy.lx.WebViewStateListener;
 import com.mhraju.bdboardexamresult.R;
-import com.mhraju.bdboardexamresult.UnsupportedProtcolInterceptor;
 import com.mhraju.bdboardexamresult.activity.MainActivity;
 
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.webkit.WebView;
-
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 
 public class OnlineResultWebViewFragment extends Fragment {
@@ -38,6 +28,15 @@ public class OnlineResultWebViewFragment extends Fragment {
 
     private InterstitialAd mInterstitialAd;
     private int board;
+    private int admissionResult;
+    private int pscResult;
+    private int nuExam;
+    private int medicalResult;
+    private int othersResult;
+    private int teachersResult;
+    private int bankResult;
+    private int bcsResult;
+    private int polytechResult;
    /* @InjectView(R.id.webview_view)
     LxWebContainerView webContainerView;*/
 
@@ -75,6 +74,18 @@ public class OnlineResultWebViewFragment extends Fragment {
         getData = getArguments();
 
         board = getData.getInt("board");
+        nuExam = getData.getInt("nuExam");
+        admissionResult = getData.getInt("admissionResult");
+        pscResult = getData.getInt("pscResult");
+        medicalResult = getData.getInt("medicalResult");
+        othersResult = getData.getInt("othersResult");
+        teachersResult = getData.getInt("teachersResult");
+        bankResult = getData.getInt("bankResult");
+        bcsResult = getData.getInt("bcsResult");
+        polytechResult = getData.getInt("polytechResult");
+
+
+        /***********************  Board EXAM  **************************/
 
 
         if(board == 21) {
@@ -96,6 +107,123 @@ public class OnlineResultWebViewFragment extends Fragment {
 
             myWebView.loadUrl("http://www.educationboardresults.gov.bd/regular/index.php");
         }
+
+
+        /***********************  NU EXAM  **************************/
+
+
+        else if(nuExam == 31) {
+
+            myWebView.loadUrl("http://www.nu.edu.bd/results/");
+        } else  if(nuExam == 32) {
+
+            myWebView.loadUrl("http://app9.nu.edu.bd/nu-web/applicantLogin.action");
+        } else  if(nuExam == 33) {
+
+            myWebView.loadUrl("http://app9.nu.edu.bd/nu-web/applicantLogin.action?degreeName=Degree%20Pass");
+        } else  if(nuExam == 34) {
+
+            myWebView.loadUrl("http://app1.nu.edu.bd/");
+        } else  if(nuExam == 35) {
+
+            myWebView.loadUrl("http://app1.nu.edu.bd/");
+        } else  if(nuExam == 36) {
+
+            myWebView.loadUrl("http://app1.nu.edu.bd/");
+        }
+
+
+
+        /***********************  BOU (others) EXAM  **************************/
+
+
+        else  if(othersResult == 41) {
+
+            myWebView.loadUrl("http://www.bou.ac.bd/result.php");
+        } else  if(othersResult == 42) {
+
+            myWebView.loadUrl("http://exam.bou.edu.bd/");
+        }
+
+
+
+
+        /***********************  Polytech EXAM  **************************/
+
+
+        else  if(polytechResult == 51) {
+
+            myWebView.loadUrl("http://123.49.52.26:1090/first_shift/SeatPlans/merit_list");
+        } else  if(polytechResult == 52) {
+
+            myWebView.loadUrl("http://123.49.52.26:1090/second_shift/SeatPlans/merit_list");
+        } else  if(polytechResult == 53) {
+
+            myWebView.loadUrl("http://www.bteb.gov.bd/site/page/a34671e3-a81c-4927-834f-19d6afc41217/");
+        }
+
+
+
+        /***********************  Medical EXAM  **************************/
+
+
+        else  if(medicalResult == 61) {
+
+            myWebView.loadUrl("http://result.dghs.gov.bd/");
+        } else  if(medicalResult == 62) {
+
+            myWebView.loadUrl("http://bcpsbd.org/result/");
+        }
+
+
+
+
+        /***********************  Admission EXAM  **************************/
+
+
+        else  if(admissionResult == 71) {
+
+            myWebView.loadUrl("https://allresultbd.com/admission-result/");
+        }
+
+
+
+        /***********************  PSC EXAM  **************************/
+
+
+        else  if(pscResult == 81) {
+
+            myWebView.loadUrl("http://www.bpsc.gov.bd/site/view/psc_exam/Non-Cadre%20Examination");
+        }
+
+
+
+        /***********************  BCS EXAM  **************************/
+
+
+        else  if(bcsResult == 91) {
+
+            myWebView.loadUrl("http://www.bpsc.gov.bd/site/view/psc_exam/BCS%20Examination/");
+        }
+
+
+        /***********************  Teachers EXAM  **************************/
+
+
+        else  if(teachersResult == 111) {
+
+            myWebView.loadUrl("http://ntrca.teletalk.com.bd/result/");
+        }
+
+
+        /***********************  Bank EXAM  **************************/
+
+
+        else  if(bankResult == 221) {
+
+            myWebView.loadUrl("https://erecruitment.bb.org.bd/");
+        }
+
 
         myWebView.setWebViewClient(new WebViewClient() {
             @Override

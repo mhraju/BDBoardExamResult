@@ -28,6 +28,10 @@ public class SelectionType extends Fragment {
     private int medicalResult;
     private int othersResult;
     private int boardResult;
+    private int teachersResult;
+    private int bankResult;
+    private int bcsResult;
+    private int polytechResult;
 
 
     public SelectionType() {
@@ -68,6 +72,10 @@ public class SelectionType extends Fragment {
         nuExam = getData.getInt("nuExam");
         medicalResult = getData.getInt("medicalResult");
         othersResult = getData.getInt("othersResult");
+        teachersResult = getData.getInt("teachersResult");
+        bankResult = getData.getInt("bankResult");
+        bcsResult = getData.getInt("bcsResult");
+        polytechResult = getData.getInt("polytechResult");
 
 
         mOnline.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +90,10 @@ public class SelectionType extends Fragment {
                 bundle.putInt("nuExam",nuExam);
                 bundle.putInt("medicalResult",medicalResult);
                 bundle.putInt("othersResult",othersResult);
+                bundle.putInt("teachersResult",teachersResult);
+                bundle.putInt("bankResult",bankResult);
+                bundle.putInt("bcsResult",bcsResult);
+                bundle.putInt("polytechResult",polytechResult);
                 Fragment fragment=new OnlineResultFragment();
                 fragment.setArguments(bundle);
                 FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();

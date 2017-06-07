@@ -18,7 +18,7 @@ import com.mhraju.bdboardexamresult.R;
 
 public class HomeFragment extends Fragment {
 
-    private Button boardResult, admissionResult, pscResult, nuExam, medicalResult, othersResult;
+    private Button boardResult, admissionResult, pscResult, nuExam, medicalResult, othersResult, teachersResult, bankResult, bcsResult, polytechResult;
     private int trackId;
     private AdView mAdView;
     private InterstitialAd mInterstitialAd;
@@ -41,6 +41,10 @@ public class HomeFragment extends Fragment {
         nuExam = (Button) view.findViewById(R.id.nuExam);
         medicalResult = (Button) view.findViewById(R.id.medicalResult);
         othersResult = (Button) view.findViewById(R.id.othersResult);
+        teachersResult = (Button) view.findViewById(R.id.teachersResult);
+        bankResult = (Button) view.findViewById(R.id.bankResult);
+        bcsResult = (Button) view.findViewById(R.id.bcsResult);
+        polytechResult = (Button) view.findViewById(R.id.polytechResult);
 
 
         mAdView = (AdView)view.findViewById(R.id.adView);
@@ -119,6 +123,54 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+/******************************/
+        teachersResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                trackId = 18;
+                showIntAdd();
+                getSelection();
+
+            }
+        });
+
+        bankResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                trackId = 19;
+                showIntAdd();
+                getSelection();
+
+            }
+        });
+
+
+        bcsResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                trackId = 17;
+                showIntAdd();
+                getSelection();
+
+            }
+        });
+
+        polytechResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                trackId = 16;
+                showIntAdd();
+                getSelection();
+
+            }
+        });
+
+
         return  view;
     }
 
@@ -132,6 +184,10 @@ public class HomeFragment extends Fragment {
         bundle.putInt("nuExam",trackId);
         bundle.putInt("medicalResult",trackId);
         bundle.putInt("othersResult",trackId);
+        bundle.putInt("teachersResult",trackId);
+        bundle.putInt("bankResult",trackId);
+        bundle.putInt("bcsResult",trackId);
+        bundle.putInt("polytechResult",trackId);
         Fragment fragment=new SelectionType();
         fragment.setArguments(bundle);
         FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
