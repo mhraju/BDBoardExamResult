@@ -2,18 +2,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context="com.mhraju.bdboardexamresult.fragment.SelectionType"
     android:orientation="vertical">
+
+
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/bangladesh_board"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:text="(JSC, SSC, HSC, BCS, PSC, Medical, Admission etc.)"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@+id/imageLogo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="12dp" />
 
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:orientation="vertical"
        android:id="@+id/linearLayout"
-       android:layout_above="@+id/adView"
-       android:layout_centerHorizontal="true"
-       android:layout_marginBottom="140dp">
+       android:layout_below="@+id/imageLogo"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentStart="true"
+       android:layout_marginTop="44dp">
        <Button
            android:id="@+id/online"
            android:layout_marginLeft="15dp"
