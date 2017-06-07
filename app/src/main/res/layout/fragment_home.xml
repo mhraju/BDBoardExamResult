@@ -37,15 +37,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="4dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="12dp"
                 android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e4d9d9"
                 card_view:cardCornerRadius="1dp">
 
                 <Button
                     android:id="@+id/boardResult"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
-                    android:layout_margin="12dp"
+                    android:layout_margin="16dp"
                     android:background="@drawable/boardresult"
                     android:paddingTop="16dp"
                     android:text="Board \n Result"
@@ -61,9 +62,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="12dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e4d9d9"
                 card_view:cardCornerRadius="1dp">
 
 
@@ -71,7 +73,7 @@
                     android:id="@+id/admissionResult"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
-                    android:layout_margin="12dp"
+                    android:layout_margin="16dp"
                     android:background="@drawable/admissionresult"
                     android:paddingTop="16dp"
                     android:text="Admission \n Test"
@@ -98,8 +100,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="4dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="12dp"
                 android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e4d9d9"
                 app:cardCornerRadius="1dp">
 
 
@@ -107,7 +110,7 @@
                     android:id="@+id/pscResult"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
-                    android:layout_margin="12dp"
+                    android:layout_margin="16dp"
                     android:background="@drawable/pscresult"
                     android:paddingTop="16dp"
                     android:text="PSC \n Exam"
@@ -122,16 +125,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="12dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e4d9d9"
                 card_view:cardCornerRadius="1dp">
 
                 <Button
                     android:id="@+id/bcsResult"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
-                    android:layout_margin="12dp"
+                    android:layout_margin="16dp"
                     android:background="@drawable/bcssresult"
                     android:paddingTop="16dp"
                     android:text="BCS \n Result"
@@ -161,15 +165,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="4dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="12dp"
                 android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e4d9d9"
                 card_view:cardCornerRadius="1dp">
 
                 <Button
                     android:id="@+id/medicalResult"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
-                    android:layout_margin="12dp"
+                    android:layout_margin="16dp"
                     android:background="@drawable/medicalresult"
                     android:paddingTop="16dp"
                     android:text="Medical \n BDMC"
@@ -185,16 +190,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="12dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e4d9d9"
                 card_view:cardCornerRadius="1dp">
 
                 <Button
                     android:id="@+id/polytechResult"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
-                    android:layout_margin="12dp"
+                    android:layout_margin="16dp"
                     android:background="@drawable/polyresult"
                     android:paddingTop="16dp"
                     android:text="Polytech \n Exam"
@@ -224,15 +230,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="4dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="12dp"
                 android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e4d9d9"
                 card_view:cardCornerRadius="1dp">
 
                 <Button
                     android:id="@+id/nuExam"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
-                    android:layout_margin="12dp"
+                    android:layout_margin="16dp"
                     android:background="@drawable/nuexam"
                     android:paddingTop="16dp"
                     android:text="NU \n Exam"
@@ -249,16 +256,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="12dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e4d9d9"
                 card_view:cardCornerRadius="1dp">
 
                 <Button
                     android:id="@+id/othersResult"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
-                    android:layout_margin="12dp"
+                    android:layout_margin="16dp"
                     android:background="@drawable/othersresult"
                     android:paddingTop="16dp"
                     android:text="BOU \n Exam"
@@ -288,15 +296,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:layout_marginLeft="4dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="12dp"
                 android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e4d9d9"
                 card_view:cardCornerRadius="1dp">
 
                 <Button
                     android:id="@+id/teachersResult"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
-                    android:layout_margin="12dp"
+                    android:layout_margin="16dp"
                     android:background="@drawable/teachersresult"
                     android:paddingTop="16dp"
                     android:text="Teachers"
@@ -313,16 +322,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="12dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e4d9d9"
                 card_view:cardCornerRadius="1dp">
 
                 <Button
                     android:id="@+id/bankResult"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
-                    android:layout_margin="12dp"
+                    android:layout_margin="16dp"
                     android:background="@drawable/bankresult"
                     android:paddingTop="16dp"
                     android:text="Bank \n Exam"
