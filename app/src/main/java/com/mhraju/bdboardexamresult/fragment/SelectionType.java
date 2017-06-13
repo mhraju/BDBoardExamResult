@@ -111,7 +111,7 @@ public class SelectionType extends Fragment {
 
                 showIntAdd();
 
-                Fragment fragment=new OnlineResultFragment();
+                Fragment fragment=new SmsBoardFragment();
                 FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.containerHome, fragment);
                 fragmentTransaction.addToBackStack(null);

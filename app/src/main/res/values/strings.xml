@@ -55,6 +55,8 @@ RSC YES 12345 01913XXXXXX
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spinner_title">Select Exam Name</string>
+    <string name="spinner_year">Select Exam Year</string>
 
 
     <!--ca-app-pub-6008099628983320~8651520695-->

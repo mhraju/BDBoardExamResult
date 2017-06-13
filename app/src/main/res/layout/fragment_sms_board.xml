@@ -1,0 +1,234 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.mhraju.bdboardexamresult.fragment.SmsBoardFragment">
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="10dp"
+        android:id="@+id/pscResult"
+        android:layout_width="match_parent"
+        android:background="@drawable/seletion_type_button"
+        android:layout_height="wrap_content">
+       <LinearLayout
+           android:layout_margin="4dp"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:weightSum="3"
+           android:orientation="horizontal">
+           <ImageView
+               android:layout_margin="4dp"
+               android:layout_width="0dp"
+               android:layout_height="40dp"
+               android:layout_weight=".8"
+               android:src="@drawable/psc"/>
+           <TextView
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:text="PSC/Ebtedayi Results"
+               android:layout_gravity="center"
+               android:textSize="12sp"
+               android:layout_weight="2.2"/>
+       </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/jscResult"
+        android:background="@drawable/seletion_type_button"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:weightSum="3"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bangladesh_board"
+                android:layout_weight=".8"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="JSC, SSC, HSC/Equivalent Results"
+                android:layout_gravity="center"
+                android:textSize="12sp"
+                android:layout_weight="2.2"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_margin="10dp"
+        android:id="@+id/ssc_voc"
+        android:background="@drawable/seletion_type_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:weightSum="3"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bangladesh_board"
+                android:layout_weight=".8"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="SSC(Voc)(BTEB) Results"
+                android:layout_gravity="center"
+                android:textSize="12sp"
+                android:layout_weight="2.2"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/hsc_voc"
+        android:layout_width="match_parent"
+        android:background="@drawable/seletion_type_button"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:layout_margin="4dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bangladesh_board"
+                android:layout_weight=".8"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="HSC(Voc)(BTEB) Results"
+                android:layout_gravity="center"
+                android:textSize="12sp"
+                android:layout_weight="2.2"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_margin="10dp"
+        android:id="@+id/degree"
+        android:background="@drawable/seletion_type_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:layout_margin="4dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:src="@drawable/national_university_logo"
+                android:layout_weight=".8"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Degree Exam  Results"
+                android:layout_gravity="center"
+                android:textSize="12sp"
+                android:layout_weight="2.2"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/honour"
+        android:background="@drawable/seletion_type_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:layout_margin="4dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:src="@drawable/national_university_logo"
+                android:layout_weight=".8"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Honour's Exam Results"
+                android:layout_gravity="center"
+                android:textSize="12sp"
+                android:layout_weight="2.2"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_margin="10dp"
+        android:id="@+id/masters"
+        android:background="@drawable/seletion_type_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:layout_margin="4dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:src="@drawable/national_university_logo"
+                android:layout_weight=".8"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Master's Exam Results"
+                android:layout_gravity="center"
+                android:textSize="12sp"
+                android:layout_weight="2.2"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/nuExam"
+        android:background="@drawable/seletion_type_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:layout_margin="4dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:src="@drawable/national_university_logo"
+                android:layout_weight=".8"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="NU Admission Test Results"
+                android:layout_gravity="center"
+                android:textSize="12sp"
+                android:layout_weight="2.2"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+</LinearLayout>

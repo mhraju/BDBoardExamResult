@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mhraju.bdboardexamresult.fragment.SmsManagerFragment">
+
+    <Spinner
+        android:id="@+id/eName"
+        style="@style/SpinnerAsEditText"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </Spinner>
+    <Spinner
+        android:id="@+id/board"
+        style="@style/SpinnerAsEditText"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </Spinner>
+    <EditText
+        android:id="@+id/tCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#e94983"
+        android:hint="Type Thana/Upazilla code"/>
+    <EditText
+        android:id="@+id/roll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#e94983"
+        android:hint="Type Your Roll Number"/>
+    <Spinner
+        android:id="@+id/year"
+        style="@style/SpinnerAsEditText"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </Spinner>
+   <Button
+       android:id="@+id/send"
+       android:background="@drawable/seletion_type_button"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginRight="8dp"
+       android:layout_marginLeft="8dp"
+       android:layout_marginBottom="8dp"
+       android:text="Send SMS"/>
+
+
+</LinearLayout>
