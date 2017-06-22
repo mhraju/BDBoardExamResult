@@ -69,6 +69,7 @@ public class SmsBoardFragment extends Fragment {
                 ft.replace(R.id.containerHome,fragment);
                 ft.addToBackStack(null);
                 getFragmentManager().popBackStackImmediate();
+                ft.commit();
 
             }
         });
@@ -82,6 +83,7 @@ public class SmsBoardFragment extends Fragment {
                 ft.replace(R.id.containerHome,fragment);
                 ft.addToBackStack(null);
                 getFragmentManager().popBackStackImmediate();
+                ft.commit();
 
             }
         });
@@ -95,6 +97,7 @@ public class SmsBoardFragment extends Fragment {
                 ft.replace(R.id.containerHome,fragment);
                 ft.addToBackStack(null);
                 getFragmentManager().popBackStackImmediate();
+                ft.commit();
 
             }
         });
@@ -108,6 +111,7 @@ public class SmsBoardFragment extends Fragment {
                 ft.replace(R.id.containerHome,fragment);
                 ft.addToBackStack(null);
                 getFragmentManager().popBackStackImmediate();
+                ft.commit();
 
             }
         });
@@ -121,6 +125,7 @@ public class SmsBoardFragment extends Fragment {
                 ft.replace(R.id.containerHome,fragment);
                 ft.addToBackStack(null);
                 getFragmentManager().popBackStackImmediate();
+                ft.commit();
 
             }
         });
@@ -134,6 +139,7 @@ public class SmsBoardFragment extends Fragment {
                 ft.replace(R.id.containerHome,fragment);
                 ft.addToBackStack(null);
                 getFragmentManager().popBackStackImmediate();
+                ft.commit();
 
             }
         });
@@ -147,6 +153,7 @@ public class SmsBoardFragment extends Fragment {
                 ft.replace(R.id.containerHome,fragment);
                 ft.addToBackStack(null);
                 getFragmentManager().popBackStackImmediate();
+                ft.commit();
 
             }
         });
