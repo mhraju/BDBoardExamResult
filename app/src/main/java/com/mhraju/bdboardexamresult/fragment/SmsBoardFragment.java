@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.mhraju.bdboardexamresult.R;
 
 /**
@@ -24,6 +27,8 @@ public class SmsBoardFragment extends Fragment {
     private CardView masters;
     private CardView NU;
     private Bundle bundle;
+    private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
 
 
     public SmsBoardFragment() {
@@ -44,10 +49,24 @@ public class SmsBoardFragment extends Fragment {
         honour= (CardView) view.findViewById(R.id.honour);
         masters= (CardView) view.findViewById(R.id.masters);
         NU= (CardView) view.findViewById(R.id.nuExam);
+
+        mAdView = (AdView)view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("ca-app-pub-6008099628983320~8651520695")
+                .build();
+        mAdView.loadAd(adRequest);
+
+        mInterstitialAd = createNewIntAd();
+        loadIntAdd();
+
+
+
+
         bundle=new Bundle();
         mPsc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showIntAdd();
                 Fragment fragment=new SmsManagerFragment();
                 bundle.putInt("id",1);
                 FragmentTransaction ft=getFragmentManager().beginTransaction();
@@ -62,6 +81,7 @@ public class SmsBoardFragment extends Fragment {
         mJsc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showIntAdd();
                 Fragment fragment=new SmsManagerFragment();
                 bundle.putInt("id",2);
                 fragment.setArguments(bundle);
@@ -76,6 +96,7 @@ public class SmsBoardFragment extends Fragment {
         mVoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showIntAdd();
                 Fragment fragment=new SmsManagerFragment();
                 bundle.putInt("id",3);
                fragment.setArguments(bundle);
@@ -90,6 +111,7 @@ public class SmsBoardFragment extends Fragment {
         mHvoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showIntAdd();
                 Fragment fragment=new SmsManagerFragment();
                 bundle.putInt("id",4);
                fragment.setArguments(bundle);
@@ -104,6 +126,7 @@ public class SmsBoardFragment extends Fragment {
         mDegree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showIntAdd();
                 Fragment fragment=new SmsManagerFragment();
                 bundle.putInt("id",5);
                fragment.setArguments(bundle);
@@ -118,6 +141,7 @@ public class SmsBoardFragment extends Fragment {
         honour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showIntAdd();
                 Fragment fragment=new SmsManagerFragment();
                 bundle.putInt("id",6);
                 fragment.setArguments(bundle);
@@ -132,6 +156,7 @@ public class SmsBoardFragment extends Fragment {
         masters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showIntAdd();
                 Fragment fragment=new SmsManagerFragment();
                 bundle.putInt("id",7);
                 fragment.setArguments(bundle);
@@ -146,6 +171,9 @@ public class SmsBoardFragment extends Fragment {
         NU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                showIntAdd();
+
                 Fragment fragment=new SmsManagerFragment();
                 bundle.putInt("id",8);
                 fragment.setArguments(bundle);
@@ -160,5 +188,31 @@ public class SmsBoardFragment extends Fragment {
 
         return view;
     }
+
+
+    private InterstitialAd createNewIntAd() {
+        InterstitialAd intAd = new InterstitialAd(getActivity());
+        // set the adUnitId (defined in values/strings.xml)
+        intAd.setAdUnitId(getString(R.string.ad_id_interstitial));
+
+        return intAd;
+    }
+
+    private void showIntAdd() {
+
+// Show the ad if it's ready. Otherwise toast and reload the ad.
+        if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
+    }
+    private void loadIntAdd() {
+        // Disable the  level two button and load the ad.
+//        fab.setEnabled(false);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("ca-app-pub-6008099628983320~8651520695")
+                .build();
+        mInterstitialAd.loadAd(adRequest);
+    }
+
 
 }

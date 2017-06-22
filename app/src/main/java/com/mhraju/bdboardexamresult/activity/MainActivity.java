@@ -3,6 +3,8 @@ package com.mhraju.bdboardexamresult.activity;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -19,8 +21,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.mhraju.bdboardexamresult.R;
 import com.mhraju.bdboardexamresult.fragment.HomeFragment;
+import com.mhraju.bdboardexamresult.fragment.SelectionType;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,6 +37,9 @@ public class MainActivity extends AppCompatActivity
     private Button boardResult, admissionResult, pscResult, nuExam, medicalResult, othersResult;
     private int trackId;
 
+    private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +47,15 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mAdView = (AdView)findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("ca-app-pub-6008099628983320~8651520695")
+                .build();
+        mAdView.loadAd(adRequest);
 
+
+        mInterstitialAd = createNewIntAd();
+        loadIntAdd();
 
 
 
@@ -58,17 +75,17 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
-        getSelection();
+        getHome();
 
     }
 
 
-    public void  getSelection(){
 
+    private void getHome(){
 
-
-        Fragment fragment = new HomeFragment();
+        Fragment fragment=new HomeFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.containerHome, fragment);
@@ -122,17 +139,55 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.board) {
+            trackId = 10;
+            showIntAdd();
+            getSelection();
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.admission) {
+            trackId = 11;
+            showIntAdd();
+            getSelection();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.psc) {
+            trackId = 12;
+            showIntAdd();
+            getSelection();
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.bcs) {
+            trackId = 17;
+            showIntAdd();
+            getSelection();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.medical) {
+            trackId = 14;
+            showIntAdd();
+            getSelection();
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.poly) {
+            trackId = 16;
+            showIntAdd();
+            getSelection();
+
+        }else if (id == R.id.nu) {
+            trackId = 13;
+            showIntAdd();
+            getSelection();
+
+        } else if (id == R.id.bou) {
+            trackId = 15;
+            showIntAdd();
+            getSelection();
+
+        } else if (id == R.id.teachers) {
+            trackId = 18;
+            showIntAdd();
+            getSelection();
+
+        } else if (id == R.id.bank) {
+            trackId = 19;
+            showIntAdd();
+            getSelection();
 
         }
 
@@ -140,4 +195,55 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    public void  getSelection(){
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("boardResult",trackId);
+        bundle.putInt("admissionResult",trackId);
+        bundle.putInt("pscResult",trackId);
+        bundle.putInt("nuExam",trackId);
+        bundle.putInt("medicalResult",trackId);
+        bundle.putInt("othersResult",trackId);
+        bundle.putInt("teachersResult",trackId);
+        bundle.putInt("bankResult",trackId);
+        bundle.putInt("bcsResult",trackId);
+        bundle.putInt("polytechResult",trackId);
+        Fragment fragment=new SelectionType();
+        fragment.setArguments(bundle);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.containerHome, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
+
+
+
+    private InterstitialAd createNewIntAd() {
+        InterstitialAd intAd = new InterstitialAd(getApplicationContext());
+        // set the adUnitId (defined in values/strings.xml)
+        intAd.setAdUnitId(getString(R.string.ad_id_interstitial));
+        return intAd;
+    }
+
+    private void showIntAdd() {
+
+// Show the ad if it's ready. Otherwise toast and reload the ad.
+        if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
+    }
+    private void loadIntAdd() {
+        // Disable the  level two button and load the ad.
+//        fab.setEnabled(false);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("ca-app-pub-6008099628983320~8651520695")
+                .build();
+        mInterstitialAd.loadAd(adRequest);
+    }
+
 }

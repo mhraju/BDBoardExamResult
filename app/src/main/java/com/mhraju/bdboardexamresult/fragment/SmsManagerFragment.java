@@ -16,6 +16,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.mhraju.bdboardexamresult.R;
 
 import java.util.ArrayList;
@@ -53,6 +56,8 @@ public class SmsManagerFragment extends Fragment {
     private int id;
     private int track;
     private  SmsManager smsManager;
+    private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
 
 
     public SmsManagerFragment() {
@@ -65,6 +70,17 @@ public class SmsManagerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_sms_manager, container, false);
+
+        mAdView = (AdView)view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("ca-app-pub-6008099628983320~8651520695")
+                .build();
+        mAdView.loadAd(adRequest);
+
+        mInterstitialAd = createNewIntAd();
+        loadIntAdd();
+
+
         mExamName= (Spinner) view.findViewById(R.id.sName);
         mYear= (Spinner) view.findViewById(R.id.sYear);
         mBoard= (Spinner) view.findViewById(R.id.sBoard);
@@ -72,10 +88,12 @@ public class SmsManagerFragment extends Fragment {
         mRoll= (EditText) view.findViewById(R.id.roll);
         mSend= (Button) view.findViewById(R.id.send);
         bundle=this.getArguments();
+
         if(bundle!=null){
             id=bundle.getInt("id");
 
         }
+
 
 
         adapteryear=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,mYesrList);
@@ -128,6 +146,9 @@ public class SmsManagerFragment extends Fragment {
         mSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                showIntAdd();
+
                 code=mThanaCode.getText().toString();
                 roll=mRoll.getText().toString();
                 year=mYear.getSelectedItem().toString();
@@ -220,5 +241,31 @@ public class SmsManagerFragment extends Fragment {
 
         return view;
     }
+
+
+    private InterstitialAd createNewIntAd() {
+        InterstitialAd intAd = new InterstitialAd(getActivity());
+        // set the adUnitId (defined in values/strings.xml)
+        intAd.setAdUnitId(getString(R.string.ad_id_interstitial));
+
+        return intAd;
+    }
+
+    private void showIntAdd() {
+
+// Show the ad if it's ready. Otherwise toast and reload the ad.
+        if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
+    }
+    private void loadIntAdd() {
+        // Disable the  level two button and load the ad.
+//        fab.setEnabled(false);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("ca-app-pub-6008099628983320~8651520695")
+                .build();
+        mInterstitialAd.loadAd(adRequest);
+    }
+
 
 }

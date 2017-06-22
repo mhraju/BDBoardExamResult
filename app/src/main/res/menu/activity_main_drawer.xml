@@ -3,21 +3,45 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/board"
+            android:icon="@drawable/psc"
+            android:title="Board Result" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/admission"
+            android:icon="@drawable/du_logo"
+            android:title="Admission Result" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/psc"
+            android:icon="@drawable/bangladesh_board"
+            android:title="PSC Result" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/bcs"
+            android:icon="@drawable/bangladesh_board"
+            android:title="BCS Result" />
+        <item
+            android:id="@+id/medical"
+            android:icon="@drawable/mbbs"
+            android:title="Medical Result" />
+        <item
+            android:id="@+id/poly"
+            android:icon="@drawable/vocational_board"
+            android:title="Polytech Result" />
+        <item
+            android:id="@+id/nu"
+            android:icon="@drawable/national_university_logo"
+            android:title="NU Exam Result" />
+        <item
+            android:id="@+id/bou"
+            android:icon="@drawable/bou_logo"
+            android:title="BOU Exam Reult" />
+        <item
+            android:id="@+id/teachers"
+            android:icon="@drawable/bangladesh_board"
+            android:title="Teachers Exam" />
+        <item
+            android:id="@+id/bank"
+            android:icon="@drawable/bbank"
+            android:title="Bank Exam" />
     </group>
 
     <item android:title="Communicate">
